@@ -1,6 +1,8 @@
 module REIYFramework
 
 export main
+export cfg_t
+export Individual_t
 
 using DataFrames
 using ArgParse
@@ -13,7 +15,7 @@ import Base.show
 @everywhere using YARS
 @everywhere global yars = None
 
-@everywhere type Individual_t
+type Individual_t
   rnn::Vector{RNN_t}
   fitness::Float64
   cost::Float64
@@ -22,7 +24,7 @@ import Base.show
 end
 
 
-@everywhere type cfg_t
+type cfg_t
   lifetime::Int64
   generations::Int64
   population_size::Int64
